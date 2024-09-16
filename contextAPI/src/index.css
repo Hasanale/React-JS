@@ -23,6 +23,7 @@ a:hover {
 }
 
 body {
+  background: white;
   margin: 0;
   display: flex;
   place-items: center;
@@ -31,6 +32,7 @@ body {
 }
 
 h1 {
+  color: black;
   font-size: 3.2em;
   line-height: 1.1;
 }
@@ -54,6 +56,33 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.msg {
+  color: black;
+}
+.login {
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  background: orange;
+  padding: 20px;
+  height: 200px;
+}
+.input::placeholder {
+  color: black;
+}
+.input {
+  color: black;
+  background: white;
+  border: white;
+
+  border-radius: 7px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.btn {
+  background: black;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
