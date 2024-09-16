@@ -7,7 +7,7 @@ function Header() {
   return (
     <div>
       <nav>
-        <ul className="flex font-mono text-xl gap-10 text-black p-10 justify-center bg-gray-300 ">
+        <ul className="flex font-mono text-xl gap-10 text-black p-5 justify-center bg-gray-300 ">
           <li className="hover:font-bold">
             <NavLink
               className={({ isActive }) =>

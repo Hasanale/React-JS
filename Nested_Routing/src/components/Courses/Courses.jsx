@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 function Courses() {
   return (
-    <div>
+    <div className="pt-10">
       {/* <div className="text-white text-5xl text-center p-10">Courses </div> */}
       {/* <div className="text-white gap-11 justify-center flex p-10 text-3xl font-mono">
         <NavLink
