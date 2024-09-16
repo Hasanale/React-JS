@@ -4,7 +4,8 @@ import { NavLink, Outlet } from "react-router-dom";
 function Courses() {
   return (
     <div>
-      <div className="text-white gap-11 justify-center flex p-10 text-3xl font-mono">
+      {/* <div className="text-white text-5xl text-center p-10">Courses </div> */}
+      {/* <div className="text-white gap-11 justify-center flex p-10 text-3xl font-mono">
         <NavLink
           to="/courses/undergraduate"
           className={({ isActive }) =>
@@ -35,7 +36,7 @@ function Courses() {
         >
           PHD Programs
         </NavLink>
-      </div>
+      </div> */}
       <Outlet />
     </div>
   );
