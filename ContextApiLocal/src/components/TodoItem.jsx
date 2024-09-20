@@ -1,4 +1,17 @@
+import { useState } from "react";
+import useTodo from "../contexts/TodoContext";
+
 function TodoItem({ todo }) {
+  const { toggleComplete, deleteTodo, updateTodo } = useTodo();
+  const [todoMsg, setTodoMsg] = useState(todo.todo);
+  const [isTodoEditable, setIsTodoEditable] = useState(false);
+  const toggleCompleted = () => {
+    toggleComplete(todo.id);
+  };
+  const editTodo = () => {
+    updateTodo(todo.id, { ...todo, todo: todoMsg });
+    setIsTodoEditable(false);
+  };
   return (
     <div
       className={`flex border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300  text-black ${
@@ -14,7 +27,7 @@ function TodoItem({ todo }) {
       <input
         type="text"
         className={`border outline-none w-full bg-transparent rounded-lg ${
-          isTodoEditable ? "border-black/10 px-2" : "border-transparent"
+          isTodoEditable ? "border-black px-2" : "border-transparent"
         } ${todo.completed ? "line-through" : ""}`}
         value={todoMsg}
         onChange={(e) => setTodoMsg(e.target.value)}
@@ -34,6 +47,7 @@ function TodoItem({ todo }) {
       >
         {isTodoEditable ? "📁" : "✏️"}
       </button>
+
       {/* Delete Todo Button */}
       <button
         className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0"

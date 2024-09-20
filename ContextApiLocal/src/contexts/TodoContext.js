@@ -15,7 +15,7 @@ export const TodoContext = createContext({
   toggleComplete: (id) => {},
 });
 
-export const TodoProvider = TodoContext.Provider();
+export const TodoProvider = TodoContext.Provider;
 
 export default function useTodo() {
   return useContext(TodoContext);
