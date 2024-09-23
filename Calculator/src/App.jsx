@@ -23,11 +23,11 @@ function Calculator() {
         setdisplay(display + buttonValue);
       }
     } else if (buttonValue === "=") {
-      const cal = display
-        // .replace(/×/g, "*")
-        // .replace(/÷/g, "/")
-        .replace(/−/g, "-")
-        .replace(/%/g, "/100");
+      const cal = display;
+      // // .replace(/×/g, "*")
+      // // .replace(/÷/g, "/")
+      // .replace(/−/g, "-")
+      // .replace(/%/g, "/100");
 
       try {
         const result = eval(cal);

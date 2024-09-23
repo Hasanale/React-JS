@@ -1,77 +1,60 @@
 import React from "react";
+import Buttons from "./Buttons";
 
 function ButtonContainer({ ValueDisplay, ValueClear, ValueBack }) {
   return (
     <div className="grid grid-cols-4 gap-4">
-      <button className="btn-clear-dark col-span-2" onClick={ValueClear}>
+      <button className="btn-clear-dark " onClick={ValueClear}>
         C
-      </button>{" "}
-      <button
-        className=" bg-gray-700  col-span-2 font-bold text-3xl"
-        onClick={ValueBack}
-      >
+      </button>
+      <Buttons className="btn-dark" name={"%"} ValueDisplay={ValueDisplay} />
+
+      <button className=" bg-gray-700   font-bold text-3xl" onClick={ValueBack}>
         🡄
       </button>
+
+      <Buttons
+        className="btn-operator-dark"
+        name={"/"}
+        ValueDisplay={ValueDisplay}
+      />
       {/* Number Buttons */}
-      <button className="btn-dark" onClick={ValueDisplay} name="7">
-        7
-      </button>
-      <button className="btn-dark" onClick={ValueDisplay} name="8">
-        8
-      </button>
-      <button className="btn-dark" onClick={ValueDisplay} name="9">
-        9
-      </button>
-      <button className="btn-operator-dark" name="/" onClick={ValueDisplay}>
-        /
-      </button>
-      <button className="btn-dark" onClick={ValueDisplay} name="4">
-        4
-      </button>
-      <button className="btn-dark" onClick={ValueDisplay} name="5">
-        5
-      </button>
-      <button className="btn-dark" onClick={ValueDisplay} name="6">
-        6
-      </button>
-      <button className="btn-operator-dark" name="*" onClick={ValueDisplay}>
-        *
-      </button>
-      <button className="btn-dark" onClick={ValueDisplay} name="1">
-        1
-      </button>
-      <button className="btn-dark" onClick={ValueDisplay} name="2">
-        2
-      </button>
-      <button className="btn-dark" onClick={ValueDisplay} name="3">
-        3
-      </button>
-      <button className="btn-operator-dark" name="-" onClick={ValueDisplay}>
-        -
-      </button>
-      <button className="btn-dark" name="." onClick={ValueDisplay}>
-        .
-      </button>
-      <button className="btn-dark" name="%" onClick={ValueDisplay}>
-        %
-      </button>
-      <button className="btn-dark" name="00" onClick={ValueDisplay}>
-        00
-      </button>
-      <button className="btn-operator-dark" name="+" onClick={ValueDisplay}>
-        +
-      </button>
+      <Buttons className="btn-dark" name={"7"} ValueDisplay={ValueDisplay} />
+      <Buttons className="btn-dark" name={"8"} ValueDisplay={ValueDisplay} />
+      <Buttons className="btn-dark" name={"9"} ValueDisplay={ValueDisplay} />
+      <Buttons
+        className="btn-operator-dark"
+        name={"*"}
+        ValueDisplay={ValueDisplay}
+      />
+
+      <Buttons className="btn-dark" name={"4"} ValueDisplay={ValueDisplay} />
+      <Buttons className="btn-dark" name={"5"} ValueDisplay={ValueDisplay} />
+      <Buttons className="btn-dark" name={"6"} ValueDisplay={ValueDisplay} />
+      <Buttons
+        className="btn-operator-dark"
+        name={"-"}
+        ValueDisplay={ValueDisplay}
+      />
+
+      <Buttons className="btn-dark" name={"1"} ValueDisplay={ValueDisplay} />
+      <Buttons className="btn-dark" name={"2"} ValueDisplay={ValueDisplay} />
+      <Buttons className="btn-dark" name={"3"} ValueDisplay={ValueDisplay} />
+      <Buttons
+        className="btn-operator-dark"
+        name={"+"}
+        ValueDisplay={ValueDisplay}
+      />
+
       {/* Clear and Equals Buttons */}
-      <button className="btn-dark col-span-2" onClick={ValueDisplay} name="0">
-        0
-      </button>
-      <button
+      <Buttons className="btn-dark " name={"0"} ValueDisplay={ValueDisplay} />
+      <Buttons className="btn-dark" name={"."} ValueDisplay={ValueDisplay} />
+
+      <Buttons
         className="btn-equals-dark col-span-2"
-        onClick={ValueDisplay}
-        name="="
-      >
-        =
-      </button>
+        name={"="}
+        ValueDisplay={ValueDisplay}
+      />
     </div>
   );
 }
