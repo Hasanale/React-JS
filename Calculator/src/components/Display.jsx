@@ -1,6 +1,8 @@
 import React from "react";
+import useCalculate from "../contexts/CalculateContext";
+function Display() {
+  const { display } = useCalculate();
 
-function Display({ display }) {
   return (
     <>
       <input

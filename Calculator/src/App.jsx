@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Display from "./components/Display";
 import ButtonContainer from "./components/ButtonContainer";
+import { CalculateProvider } from "./contexts/CalculateContext";
 
 function Calculator() {
   const [display, setdisplay] = useState("");
-
   const ValueBack = () => {
     setdisplay(display.slice(0, -1));
   };
@@ -24,10 +24,6 @@ function Calculator() {
       }
     } else if (buttonValue === "=") {
       const cal = display;
-      // // .replace(/×/g, "*")
-      // // .replace(/÷/g, "/")
-      // .replace(/−/g, "-")
-      // .replace(/%/g, "/100");
 
       try {
         const result = eval(cal);
@@ -41,14 +37,12 @@ function Calculator() {
   };
 
   return (
-    <div className="bg-gray-900 mt-8 text-white w-80 mx-auto p-6 rounded-lg shadow-2xl">
-      <Display display={display} />
-      <ButtonContainer
-        ValueDisplay={ValueDisplay}
-        ValueClear={ValueClear}
-        ValueBack={ValueBack}
-      />
-    </div>
+    <CalculateProvider value={{ ValueBack, ValueClear, ValueDisplay, display }}>
+      <div className="bg-gray-900 mt-8 text-white w-80 mx-auto p-6 rounded-lg shadow-2xl">
+        <Display />
+        <ButtonContainer />
+      </div>
+    </CalculateProvider>
   );
 }
 

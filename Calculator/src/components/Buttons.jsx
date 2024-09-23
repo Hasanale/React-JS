@@ -1,6 +1,8 @@
 import React from "react";
+import useCalculate from "../contexts/CalculateContext";
+function Buttons({ name, className }) {
+  const { ValueDisplay } = useCalculate();
 
-function Buttons({ name, ValueDisplay, className }) {
   return (
     <button className={className} name={name} onClick={ValueDisplay}>
       {name}
