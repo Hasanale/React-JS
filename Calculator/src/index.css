@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-dark {
+  @apply bg-gray-700 text-white p-4 rounded-lg text-2xl font-semibold shadow-lg transition duration-300 ease-in-out transform hover:bg-gray-600 hover:scale-105 active:scale-95;
+}
+
+.btn-operator-dark {
+  @apply bg-yellow-500 text-black p-4 rounded-lg text-2xl font-bold shadow-lg transition duration-300 ease-in-out hover:bg-yellow-400 active:bg-yellow-600;
+}
+
+.btn-clear-dark {
+  @apply bg-red-500 text-white p-4 rounded-lg text-2xl font-bold shadow-lg transition duration-300 ease-in-out hover:bg-red-400 active:bg-red-600;
+}
+
+.btn-equals-dark {
+  @apply bg-green-500 text-white p-4 rounded-lg text-2xl font-bold shadow-lg transition duration-300 ease-in-out hover:bg-green-400 active:bg-green-600;
+}
