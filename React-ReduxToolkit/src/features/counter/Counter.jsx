@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement, incrementByAmount } from "./counterSlice";
+import {
+  increment,
+  decrement,
+  incrementByAmount,
+} from "../counter/counterSlice";
 function Counter() {
   const count = useSelector((state) => state.counter.count);
+  const colorr = useSelector((state) => state.colorchanger.color);
+
   const [check, setCheck] = useState("");
   const dispatch = useDispatch();
   return (
-    <div className="flex justify-center items-center flex-col">
+    <div
+      style={{ background: colorr }}
+      className=" border-2 border-black flex m-auto rounded-xl p-8 mb-4 items-center flex-col w-[50%]"
+    >
       <p className="text-3xl">Counter</p>
       <div className="flex items-center">
         <button
@@ -15,7 +24,7 @@ function Counter() {
             dispatch(increment());
           }}
         >
-          Add Value
+          Add
         </button>
         <p>{count}</p>
         <button
@@ -24,7 +33,7 @@ function Counter() {
             dispatch(decrement());
           }}
         >
-          Remove Value
+          Remove
         </button>
         <input
           className="border-2 w-fit border-black p-2"
