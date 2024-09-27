@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AiOutlineDelete } from "react-icons/ai";
 import { SiTicktick } from "react-icons/si";
@@ -19,6 +19,9 @@ function TodoList() {
     setIsEditable(null);
     setNewText("");
   };
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
   return (
     <ul className="bg-blue-700 rounded-md mt-10 min-h-[250px]  m-auto p-4">
       {todos.map((todo) => {

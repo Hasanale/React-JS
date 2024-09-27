@@ -1,7 +1,21 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
+const local = () => {
+  try {
+    const savedTodos = localStorage.getItem("todos");
+    if (savedTodos) {
+      const parsedTodos = JSON.parse(savedTodos);
+      if (Array.isArray(parsedTodos)) {
+        return parsedTodos;
+      }
+    }
+  } catch (e) {
+    console.error("Failed to load todos from localStorage:", e);
+  }
+  return [];
+};
 const initialState = {
-  todos: [],
+  todos: local(),
 };
 
 export const todoSlice = createSlice({
