@@ -5,8 +5,10 @@ import "./App.css";
 function App() {
   return (
     <>
-      <AddTodo />
-      <TodoList />
+      <div className="w-full max-w-[700px] rounded-md mx-auto p-5 bg-white/30 ">
+        <AddTodo />
+        <TodoList />
+      </div>
     </>
   );
 }
